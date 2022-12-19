@@ -1,9 +1,10 @@
+//functional component
 import React from "react";
 import { Link } from "react-router-dom";
-import "./iconstyle.css";
+import "../iconstyle.css";
 
 const CardCategory = (props) => {
-  const { id, name } = props.category; 
+  const { id, name } = props.category;
 
   return (
     <div className="item">
@@ -12,22 +13,27 @@ const CardCategory = (props) => {
         style={{ display: "flex", justifyContent: "space-between" }}
       >
         <div className="header delete_icon">{name}</div>
-        <div style={{padding:"5px"}}>
-
-
-         {/*View icon / */}
-         <Link 
-         to={{
-          pathname: `/productlist/${id}`,
-          state: { category: props.category },
-        }}
-         >
-         <i
-         className="eye icon "
-         style={{ color: "darkblue", cursor: "pointer", paddingright: "50px" }}
-         
-       ></i>
-       </Link>
+        <hr />
+        <div style={{ padding: "5px" }}>
+          {/*View icon / */}
+          <Link
+            to={{
+              pathname: `/category/${id}`,
+              state: { category: props.category },
+            }}
+          >
+            <i
+              data-toggle="tooltip"
+              data-placement="top"
+              title="View Product "
+              className="eye icon "
+              style={{
+                color: "darkblue",
+                cursor: "pointer",
+                paddingright: "50px",
+              }}
+            ></i>
+          </Link>
 
           {/*Plus icon / */}
           <Link
@@ -36,10 +42,13 @@ const CardCategory = (props) => {
               state: { category: props.category },
             }}
           >
-          <i
-            className="plus  icon "
-            style={{ color: "blue", cursor: "pointer", paddingright: "50px" }}
-          ></i>
+            <i
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Add Product "
+              className="plus  icon "
+              style={{ color: "blue", cursor: "pointer", paddingright: "50px" }}
+            ></i>
           </Link>
 
           {/*edit icon / */}
@@ -50,13 +59,19 @@ const CardCategory = (props) => {
             }}
           >
             <i
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Edit Category"
               className="edit alternate outline icon "
               style={{ color: "blue", cursor: "pointer" }}
             ></i>
           </Link>
-          
+
           {/*Delete icon / */}
           <i
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Delete Category"
             className="trash alternate outline icon "
             style={{ color: "red", cursor: "pointer", paddingright: "50px" }}
             onClick={() => {

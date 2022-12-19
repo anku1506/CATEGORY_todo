@@ -2,3 +2,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+.background_color_header{
+    background-color: blueviolet;
+
+
+}
