@@ -39,6 +39,7 @@ const AddCategory = () => {
       addCategoryHandler(categorydata);
       setValidation(true);
       alert("Category Added successfully");
+      history.push("/")   //navigate to home page
       
     }
   };
